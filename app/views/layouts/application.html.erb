@@ -11,6 +11,7 @@
 
   <body>
     <header>
+      <%= link_to 'トップページ', root_path %>
       <nav>
           <% if user_signed_in? %>
             <strong><%= link_to current_user.name, root_path %></strong>

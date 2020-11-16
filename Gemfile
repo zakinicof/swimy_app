@@ -58,3 +58,5 @@ gem 'pry-rails'
 gem 'devise'
 
 gem 'omniauth-twitter'
+
+gem 'rails-i18n'
