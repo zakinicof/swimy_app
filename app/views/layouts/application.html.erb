@@ -12,6 +12,9 @@
   <body>
     <header>
       <nav>
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to "ユーザー一覧", users_path %>
+          <% end %>
           <% if user_signed_in? %>
             <strong><%= link_to current_user.name, root_path %></strong>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
