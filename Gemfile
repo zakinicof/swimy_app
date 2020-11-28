@@ -58,3 +58,7 @@ gem 'pry-rails'
 gem 'devise'
 
 gem 'omniauth-twitter'
+
+gem "chartkick"
+
+gem 'chartable'

@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :lessons, through: :lesson_users
+  has_many :lesson_users
+  
+
   with_options presence: true do
     with_options uniqueness: { case_sensitive: true } do
       validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "には@を含めてください" }

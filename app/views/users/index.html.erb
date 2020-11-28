@@ -1,6 +1,24 @@
-<% @users.each do |user| %>
-  <div>
-  <%= link_to user.name, user_path(user.id) %>
-  <%= link_to "編集する", edit_user_path(user.id) %>
-  </div>
-<% end %>
+<div class="container">
+  <table class="table table-striped">
+      <thead>
+        <tr class="row">
+          <th class="col">会員名</th>
+          <th class="col">編集する</th>
+          <th class="col">会員番号</th>
+          <th class="col">メールアドレス</th>
+        </tr>
+      </thead>
+    </table>
+  <% @users.each do |user| %>
+    <table class="table table-striped">
+      <thead>
+        <tr class="row">
+          <th class="col"><%= user.name %></th>
+          <th class="col"><%= link_to "編集する", "/users/#{user.id}" %></th>
+          <th class="col"><%= user.membership_number %></th>
+          <th class="col"><%= user.email %></th>
+        </tr>
+      </thead>
+    </table>
+  <% end %>
+</div>

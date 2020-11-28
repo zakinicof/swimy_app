@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_002111) do
+ActiveRecord::Schema.define(version: 2020_11_23_023155) do
+
+  create_table "evaluation_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "item_number"
+    t.bigint "lesson_id"
+    t.index ["lesson_id"], name: "index_evaluation_items_on_lesson_id"
+  end
+
+  create_table "lesson_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "lesson_id", null: false
+    t.bigint "evaluation_item_id", null: false
+    t.index ["evaluation_item_id"], name: "index_lesson_users_on_evaluation_item_id"
+    t.index ["lesson_id"], name: "index_lesson_users_on_lesson_id"
+    t.index ["user_id"], name: "index_lesson_users_on_user_id"
+  end
+
+  create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +53,8 @@ ActiveRecord::Schema.define(version: 2020_11_16_002111) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "evaluation_items", "lessons"
+  add_foreign_key "lesson_users", "evaluation_items"
+  add_foreign_key "lesson_users", "lessons"
+  add_foreign_key "lesson_users", "users"
 end

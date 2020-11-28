@@ -1,0 +1,17 @@
+<div class="container">
+  <%= "#{@user.name}さんのレッスンページ" %>
+  <h3>編集する（<%= @lesson.name %>）</h3>
+  <div class="row">
+    <%= form_with model: @lesson_user, url: "/users/#{@user.id}/lessons/#{@lesson.id}", method: :put, local: true do |form| %>
+      <%= form.collection_check_boxes(:evaluation_item_id, EvaluationItem.where(lesson_id: @lesson.id), :id, :name, include_hidden: false) do |b| %>
+        <div class="col">
+          <%= b.label {b.text} %>
+          <%= b.label {b.check_box } %>
+        </div>
+      <% end %>
+      <input type="hidden" value=<%= @user.id %>>
+      <input type="hidden" value=<%= @lesson.id %>>
+      <%= form.submit '更新' , class:"btn btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>
