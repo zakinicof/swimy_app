@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 2020_11_23_023155) do
   end
 
   create_table "lesson_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "lesson_id"
+    t.bigint "evaluation_item_id"
+    t.boolean "lesson_check", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.bigint "lesson_id", null: false
-    t.bigint "evaluation_item_id", null: false
     t.index ["evaluation_item_id"], name: "index_lesson_users_on_evaluation_item_id"
     t.index ["lesson_id"], name: "index_lesson_users_on_lesson_id"
     t.index ["user_id"], name: "index_lesson_users_on_user_id"
@@ -54,7 +55,4 @@ ActiveRecord::Schema.define(version: 2020_11_23_023155) do
   end
 
   add_foreign_key "evaluation_items", "lessons"
-  add_foreign_key "lesson_users", "evaluation_items"
-  add_foreign_key "lesson_users", "lessons"
-  add_foreign_key "lesson_users", "users"
 end

@@ -26,32 +26,46 @@ class LessonsController < ApplicationController
     @user = User.find(params[:user_id])
     @lesson = Lesson.find(params[:id])
     @evaluation_item = EvaluationItem.find(params[:id])
-    # @lesson_user = LessonUser.where(user_id: @user.id, lesson_id: @lesson.id, evaluation_item_id: @evaluation_item.id)
-    # binding.pry
+    @lesson.lesson_users
   end
 
   def update
-    lesson_params[:evaluation_item_id].each do |item_id|
-      # @user = User.find(params[:user_id])
-      # @lesson = Lesson.find(params[:id])
-      # @evaluation_item = EvaluationItem.find(params[:id])
-      # lesson_users = LessonUser.where(user_id: @user.id, lesson_id: @lesson.id)
-      # lesson_users.each do |l|
-      #   # binding.pry
-      #   if l.evaluation_item_id == item_id.to_i
-      #     :edit
-      #   else
-          lesson_user = LessonUser.new(user_id: lesson_params[:user_id], lesson_id: lesson_params[:id], evaluation_item_id: item_id)
-          lesson_user.save
-      #   end
-      # end
+    # asdf
+
+    @user = User.find(params[:user_id])
+    @lesson = Lesson.find(params[:lesson_id])
+    # 一度も編集したことがない場合、初期値を保存する
+    EvaluationItem.where(lesson_id: @lesson.id).each do |evaluation_item|
+      unless lesson_user = LessonUser.find_by(user_id: @user.id, lesson_id: @lesson.id, evaluation_item_id: evaluation_item.id)
+        lesson_user = LessonUser.new(user_id: @user.id, lesson_id: @lesson.id, evaluation_item_id: evaluation_item.id, lesson_check: 0)
+        lesson_user.save!
+      else
+        lesson_user.lesson_check = 0
+        lesson_user.save!
+      end
     end
-    redirect_to edit_user_lesson_path
+    # formから送られてきたチェックボックスを取得
+    if params[:lesson_check]
+      params[:lesson_check].each do |item_id|
+        if lesson_user = LessonUser.find_by(user_id: params[:user_id], lesson_id: params[:lesson_id], evaluation_item_id: item_id[0])
+          # 更新
+          lesson_user.lesson_check = item_id[1][0]
+          lesson_user.save!
+        else
+
+        end
+      end
+    else
+
+    end
+
+    flash[:flash] = "更新しました。"
+    redirect_to "/users/#{params[:user_id]}/lessons/#{params[:lesson_id]}/edit"
   end
 
   private
 
   def lesson_params
-    params.permit(:user_id, :id, evaluation_item_id: [])
+    params.permit(:user_id, :lesson_id, :evaluation_item_id)
   end
 end
