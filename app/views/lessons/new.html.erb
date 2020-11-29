@@ -1,0 +1,6 @@
+<%= "#{@user.name}さんのレッスンページ" %>
+<%= form_with model: @lesson_user, url: "/users/#{@user.id}/lessons", method: :post, local: true do |form| %>
+    <%= form.collection_check_boxes(:evaluation_item_id, EvaluationItem.all, :id, :name) %>
+  <input type="hidden" value=<%= @user.id %>>
+  <%= form.submit '送信' %>
+<% end %>
