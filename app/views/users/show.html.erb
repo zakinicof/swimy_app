@@ -1,1 +1,10 @@
-<%= "#{@user.name}さんの詳細ページ" %>
+<div class="container">
+  <ul class="row">
+    <%= "#{@user.name}さんの詳細ページ" %>
+    <% @lessons.each do |lesson| %>
+      <li class="col-md-12">
+        <%= link_to "#{lesson.name}を編集", "/users/#{@user.id}/lessons/#{lesson.id}/edit" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
