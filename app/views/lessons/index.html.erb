@@ -1,16 +1,14 @@
 <%= render "shared/header" %>
 <div class="container">
-  <% if user_signed_in? %>
-    <ul class="row">
+    <div class="row">
       <% @progresses.zip(@lessons).each do |progress,lesson| %>
-        <li class="col-md-4">
-          <%= link_to lesson.name, "/users/#{current_user.id}/lessons/#{lesson.id}" %>
+        <div class="col-md-4 text-center">
+          <h5><%= lesson.name %>
+          <%= "達成率：#{progress["達成"]}%　
+          " %>
+          <%= link_to "詳細", "/users/#{current_user.id}/lessons/#{lesson.id}" %></h5>
           <%= pie_chart progress, donut: true, suffix: "%" %>
-        </li>
+        </div>
       <% end %>
-    </ul>
-  <% else %>
-    <h1>ようこそ</h1>
-    <p>トップページです。</p>
-  <% end %>
+    </div>
 </div>

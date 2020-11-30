@@ -5,45 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Lesson.create!(name: "潜る")
-Lesson.create!(name: "浮く")
-Lesson.create!(name: "クロール")
-Lesson.create!(name: "平泳ぎ")
-Lesson.create!(name: "背泳ぎ")
-Lesson.create!(name: "バタフライ")
 
-EvaluationItem.create!(name: "1人でプールに入る", item_number: "D-１", lesson_id: 1)
-EvaluationItem.create!(name: "1人でプールから上がる", item_number: "D-2", lesson_id: 1)
-EvaluationItem.create!(name: "1人で歩く", item_number: "D-3", lesson_id: 1)
-EvaluationItem.create!(name: "1人でジャンプする", item_number: "D-4", lesson_id: 1)
-EvaluationItem.create!(name: "顔を洗う", item_number: "D-5", lesson_id: 1)
-EvaluationItem.create!(name: "顔をつける", item_number: "D-6", lesson_id: 1)
-EvaluationItem.create!(name: "耳をつける", item_number: "D-7", lesson_id: 1)
-EvaluationItem.create!(name: "バブリング①", item_number: "D-8", lesson_id: 1)
-EvaluationItem.create!(name: "立ち飛び込み(浅場)", item_number: "D-9", lesson_id: 1)
-EvaluationItem.create!(name: "バブリング②", item_number: "D-10", lesson_id: 1)
-EvaluationItem.create!(name: "立ち飛び込み(深場)①", item_number: "D-11", lesson_id: 1)
-EvaluationItem.create!(name: "ボビング", item_number: "D-12", lesson_id: 1)
-EvaluationItem.create!(name: "立ち飛び込み(深場)②", item_number: "D-13", lesson_id: 1)
-EvaluationItem.create!(name: "色の識別", item_number: "D-14", lesson_id: 1)
-EvaluationItem.create!(name: "物の識別", item_number: "D-15", lesson_id: 1)
-EvaluationItem.create!(name: "ジャンプボビング", item_number: "D-16", lesson_id: 1)
-EvaluationItem.create!(name: "おしりつけ", item_number: "D-17", lesson_id: 1)
-EvaluationItem.create!(name: "立ち飛び込み(深場)＋ジャンプボビング", item_number: "D-18", lesson_id: 1)
-EvaluationItem.create!(name: "お腹つけ", item_number: "D-19", lesson_id: 1)
-EvaluationItem.create!(name: "背中つけ", item_number: "D-20", lesson_id: 1)
-EvaluationItem.create!(name: "逆立ち①", item_number: "D-21", lesson_id: 1)
-EvaluationItem.create!(name: "前まわり①", item_number: "D-22", lesson_id: 1)
-EvaluationItem.create!(name: "逆立ち②", item_number: "D-23", lesson_id: 1)
-EvaluationItem.create!(name: "前まわり②", item_number: "D-24", lesson_id: 1)
-EvaluationItem.create!(name: "石拾い", item_number: "D-25", lesson_id: 1)
-EvaluationItem.create!(name: "垂直潜行(3回)", item_number: "D-26", lesson_id: 1)
-EvaluationItem.create!(name: "垂直潜行から水中潜泳(12.5m)", item_number: "D-27", lesson_id: 1)
-EvaluationItem.create!(name: "水中潜泳(途中息継ぎ1回)①", item_number: "D-28", lesson_id: 1)
-EvaluationItem.create!(name: "水中潜泳①", item_number: "D-29", lesson_id: 1)
-EvaluationItem.create!(name: "水中潜泳(途中息継ぎ1回)②", item_number: "D-30", lesson_id: 1)
-EvaluationItem.create!(name: "水中潜泳②", item_number: "D-31", lesson_id: 1)
-EvaluationItem.create!(name: "1人で浮く(立ち浮き)", item_number: "F-1", lesson_id: 2)
-EvaluationItem.create!(name: "1人で浮く(うつむけ・顔つけなし)", item_number: "F-2", lesson_id: 2)
-EvaluationItem.create!(name: "1人で浮く(背面)①", item_number: "F-3", lesson_id: 2)
-
+20.times do
+  gimei = Gimei.new
+  User.create(
+    last_name: gimei.last.kanji,
+    first_name: gimei.first.kanji,
+    last_name_kana: gimei.last.katakana,
+    first_name_kana: gimei.first.katakana,
+    email: Faker::Internet.free_email,
+    password: Faker::Internet.password(min_length: 6, mix_case: true)
+  )
+end

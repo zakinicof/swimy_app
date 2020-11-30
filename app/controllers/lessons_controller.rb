@@ -3,6 +3,15 @@ class LessonsController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @lessons = Lesson.all
+    @progresses = []
+    @lessons.each do |lesson|
+      item_count = EvaluationItem.where(lesson_id: lesson.id).count
+      achieve_count = LessonUser.where(user_id: @user.id, lesson_id: lesson.id, lesson_check: 1).count
+      achieve = achieve_count.to_f / item_count * 100
+      not_achieve = 100 - achieve
+      progress = {'達成' => achieve.round(0), '未達成' => not_achieve.round(0)}
+      @progresses << progress
+    end
   end
 
   def new
@@ -22,8 +31,19 @@ class LessonsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @lesson = Lesson.find(params[:id])
+    item_count = EvaluationItem.where(lesson_id: @lesson.id).count
+    achieve_count = LessonUser.where(user_id: @user.id, lesson_id: @lesson.id, lesson_check: 1).count
+    achieve = achieve_count.to_f / item_count * 100
+    not_achieve = 100 - achieve
+    @progress = {'達成' => achieve.round(0), '未達成' => not_achieve.round(0)}
+  end
+
   def edit
     @user = User.find(params[:user_id])
+    @lessons = Lesson.all
     @lesson = Lesson.find(params[:id])
     @evaluation_item = EvaluationItem.find(params[:id])
     @lesson.lesson_users
@@ -59,8 +79,10 @@ class LessonsController < ApplicationController
 
     end
 
-    flash[:flash] = "更新しました。"
+    flash[:notice] = "更新しました。"
     redirect_to "/users/#{params[:user_id]}/lessons/#{params[:lesson_id]}/edit"
+    
+    LessonUser.where(lesson_check: false).destroy_all
   end
 
   private

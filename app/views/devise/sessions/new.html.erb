@@ -1,9 +1,6 @@
 <head>
-  <link href="/assets/signin.css" rel="stylesheet">
+  <link href="/assets/style.css" rel="stylesheet">
 </head>
-  
-    <%# <%= render "shared/header" %>
-  
   <body class="text-center">
     <%= form_with model: @user, url: user_session_path, class:"form-signin" , local: true do |f| %>
       <img class="mb-4" src="/assets/linkaqua.jpeg" alt="" width="72" height="72">

@@ -1,6 +1,18 @@
+<%= render "shared/header" %>
 <div class="container">
-  <%= "#{@user.name}さんのレッスンページ" %>
-  <h3>編集する（<%= @lesson.name %>）</h3>
+  <div class="row">
+    <h4 class="col"><%= link_to "#{@user.last_name}#{@user.first_name}", "/users/#{@user.id}" %>さんのレッスンページ</h4>
+    
+  </div>
+  <div class="row">
+    <h3 class="col text-center">編集する（<%= @lesson.name %>）</h3>
+  </div>
+  <div class="row">
+    <h5>他の項目を編集する</h5>
+    <% @lessons.where.not(id: @lesson.id).each do |lesson| %>
+      <h5>　<%= link_to lesson.name, "/users/#{@user.id}/lessons/#{lesson.id}/edit" %></h5>
+    <% end %>
+  </div>
   <div class="row">
     <%= form_tag "/users/#{@user.id}/lessons/#{@lesson.id}", method: :post do %>
       <% EvaluationItem.where(lesson_id: @lesson.id).each do |evaluation_item| %>

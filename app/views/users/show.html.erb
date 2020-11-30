@@ -1,10 +1,17 @@
+<%= render "shared/header" %>
 <div class="container">
-  <ul class="row">
-    <%= "#{@user.name}さんの詳細ページ" %>
-    <% @lessons.each do |lesson| %>
-      <li class="col-md-12">
-        <%= link_to "#{lesson.name}を編集", "/users/#{@user.id}/lessons/#{lesson.id}/edit" %>
-      </li>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3><%= "#{@user.last_name}さんのレッスン一覧" %></h3>
+    </div>
+    <% @progresses.zip(@lessons).each do |progress,lesson| %>
+      <div class="col-md-4 text-center">
+        <h5><%= lesson.name %>
+        <%= "達成率：#{progress["達成"]}%　" %>
+        <%= link_to "編集する", "/users/#{@user.id}/lessons/#{lesson.id}/edit" %>
+        </h5>
+        <%= pie_chart progress, donut: true, suffix: "%" %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>

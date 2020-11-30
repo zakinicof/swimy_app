@@ -59,10 +59,12 @@ gem 'devise'
 
 gem 'omniauth-twitter'
 
-
 gem "chartkick"
 
 gem 'chartable'
 
 gem 'rails-i18n'
 
+gem 'gimei'
+
+gem 'faker'
