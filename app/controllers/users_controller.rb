@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :user_admin, only: [:index, :edit]
   before_action :user_show, only: :show
   def index
-    @users = User.all
+    @users = User.all.order("last_name_kana")
   end
 
   def show

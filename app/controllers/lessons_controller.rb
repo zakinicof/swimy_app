@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+  before_action :admin_user, only: [:edit, :update]
 
   def index
     @user = User.find(current_user.id)
@@ -32,14 +33,10 @@ class LessonsController < ApplicationController
   end
 
   def show
-    # ユーザーの情報を取得
     @user = User.find(params[:user_id])
-    # レッスンの情報を取得
     @lessons = Lesson.all
     @lesson = Lesson.find(params[:id])
-    # 取得したレッスンの評価項目を取得
     @items = EvaluationItem.where(lesson_id: @lesson.id)
-    # 評価項目から番号のカラムを取得
     @progresses = []
     @items.each do |item|
       achieve = LessonUser.find_by(user_id: @user.id, lesson_id: @lesson.id, evaluation_item_id: item.id)
@@ -103,7 +100,14 @@ class LessonsController < ApplicationController
 
   private
 
-  def lesson_params
-    params.permit(:user_id, :lesson_id, :evaluation_item_id)
+  # def lesson_params
+  #   params.permit(:user_id, :lesson_id, :evaluation_item_id)
+  # end
+
+  def admin_user
+    unless current_user.admin?
+      flash[:notice] = "権限がありません。"
+      redirect_to root_path
+    end
   end
 end

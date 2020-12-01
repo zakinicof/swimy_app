@@ -1,9 +1,14 @@
 <%= render "shared/header" %>
 <div class="container">
+  <div class="row">
+    <h2 class="col-md-12 text-center mb-3">会員一覧</h2>
+    <h4 class="col mb-3"><%= "現在の会員数：#{@users.count}名" %></h4>
+  </div>
   <table class="table table-striped">
       <thead>
         <tr class="row">
           <th class="col">会員名</th>
+          <th class="col">フリガナ</th>
           <th class="col">レッスン編集</th>
           <th class="col">メールアドレス</th>
         </tr>
@@ -16,6 +21,10 @@
           <th class="col">
             <%= user.last_name %> 
             <%= user.first_name %>
+          </th>
+          <th class="col">
+            <%= user.last_name_kana %> 
+            <%= user.first_name_kana %>
           </th>
           <th class="col"><%= link_to "レッスン編集", "/users/#{user.id}" %></th>
           <th class="col"><%= user.email %></th>

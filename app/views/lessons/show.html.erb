@@ -12,7 +12,7 @@
     <h5 class="col-md-12 my-2">
       <%= link_to "レッスン一覧へ戻る", root_path %>
     </h5>
-    <h5 class="col my-3">他の項目を編集する
+    <h5 class="col my-3">他の項目を確認する
       <% @lessons.where.not(id: @lesson.id).each do |lesson| %>
         <%= link_to "　#{lesson.name}", "/users/#{@user.id}/lessons/#{lesson.id}" %>
       <% end %>
