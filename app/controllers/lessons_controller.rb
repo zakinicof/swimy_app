@@ -47,6 +47,11 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
     @evaluation_item = EvaluationItem.find(params[:id])
     @lesson.lesson_users
+    item_count = EvaluationItem.where(lesson_id: @lesson.id).count
+    achieve_count = LessonUser.where(user_id: @user.id, lesson_id: @lesson.id, lesson_check: 1).count
+    achieve = achieve_count.to_f / item_count * 100
+    not_achieve = 100 - achieve
+    @progress = {'達成' => achieve.round(0), '未達成' => not_achieve.round(0)}
   end
 
   def update

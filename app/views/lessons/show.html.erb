@@ -1,4 +1,6 @@
 <%= render "shared/header" %>
-<%= "#{@lesson.name}のページ" %>
+<div class="container">
+  <%= "レッスン項目：#{@lesson.name}" %>
 
-<%= pie_chart @progress, donut: true, suffix: "%" %>
+  <%= column_chart [["D-1", 100], ["Basketball", 0]] %>
+</div>

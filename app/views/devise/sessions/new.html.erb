@@ -1,27 +1,27 @@
 <head>
-  <link href="/assets/style.css" rel="stylesheet">
+  <link href="/assets/form.css" rel="stylesheet">
 </head>
   <body class="text-center">
-    <%= form_with model: @user, url: user_session_path, class:"form-signin" , local: true do |f| %>
+    <%= form_with model: @user, url: user_session_path, class:"form" , local: true do |f| %>
       <img class="mb-4" src="/assets/linkaqua.jpeg" alt="" width="72" height="72">
       <h5 class="h5 mb-4 font-weight-normal">
           ご利用ありがとうございます。
       </h5>
       <h5 class="h5 mb-4 font-weight-normal">
-          IDとパスワードを入力してログインしてください。
+          メールアドレスとパスワードを入力してログインしてください。
       </h5>
       <div class="field mt-5 mb-3">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"form-control" , placeholder:"Email address" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"form-control" , placeholder:"メールアドレス" %>
       </div>
       <div class="field">
-          <%= f.password_field :password, autocomplete: "current-password" , class:"form-control" , placeholder:"Password" %>
+          <%= f.password_field :password, autocomplete: "current-password" , class:"form-control" , placeholder:"パスワード" %>
       </div>
 
       <div class="actions">
           <%= f.submit "ログイン" , class: "btn btn-lg btn-primary btn-block" %>
       </div>
       <div class="actions mt-4 mb-2">
-        <%= link_to '新規登録', new_user_registration_path %>
+        <%= link_to '新規登録はこちら', new_user_registration_path %>
       </div>
       <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     <% end %>
