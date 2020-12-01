@@ -38,10 +38,10 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
     @lesson = Lesson.find(params[:id])
     # 取得したレッスンの評価項目を取得
-    items = EvaluationItem.where(lesson_id: @lesson.id)
+    @items = EvaluationItem.where(lesson_id: @lesson.id)
     # 評価項目から番号のカラムを取得
     @progresses = []
-    items.each do |item|
+    @items.each do |item|
       achieve = LessonUser.find_by(user_id: @user.id, lesson_id: @lesson.id, evaluation_item_id: item.id)
       if achieve == nil
         progress = [item.item_number , 0]

@@ -1,11 +1,11 @@
 <%= render "shared/header" %>
 <div class="container">
   <div class="row">
-    <div class="col-md-12 text-center">
-      <h3><%= "#{@user.last_name}さんのレッスン一覧" %></h3>
+    <div class="col-md-12 text-center my-2">
+      <h3><%= "#{@user.last_name}#{@user.first_name}さんのレッスン一覧" %></h3>
     </div>
     <% @progresses.zip(@lessons).each do |progress,lesson| %>
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 text-center my-2">
         <h5><%= lesson.name %>
         <%= "達成率：#{progress["達成"]}%　" %>
         <%= link_to "編集する", "/users/#{@user.id}/lessons/#{lesson.id}/edit" %>
