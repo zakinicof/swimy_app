@@ -32,13 +32,24 @@ class LessonsController < ApplicationController
   end
 
   def show
+    # ユーザーの情報を取得
     @user = User.find(params[:user_id])
+    # レッスンの情報を取得
+    @lessons = Lesson.all
     @lesson = Lesson.find(params[:id])
-    item_count = EvaluationItem.where(lesson_id: @lesson.id).count
-    achieve_count = LessonUser.where(user_id: @user.id, lesson_id: @lesson.id, lesson_check: 1).count
-    achieve = achieve_count.to_f / item_count * 100
-    not_achieve = 100 - achieve
-    @progress = {'達成' => achieve.round(0), '未達成' => not_achieve.round(0)}
+    # 取得したレッスンの評価項目を取得
+    items = EvaluationItem.where(lesson_id: @lesson.id)
+    # 評価項目から番号のカラムを取得
+    @progresses = []
+    items.each do |item|
+      achieve = LessonUser.find_by(user_id: @user.id, lesson_id: @lesson.id, evaluation_item_id: item.id)
+      if achieve == nil
+        progress = [item.item_number , 0]
+      else
+        progress = [item.item_number , 100]
+      end
+      @progresses << progress
+    end
   end
 
   def edit
