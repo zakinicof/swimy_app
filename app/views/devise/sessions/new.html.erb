@@ -10,6 +10,10 @@
       <h5 class="h5 mb-4 font-weight-normal">
           メールアドレスとパスワードを入力してログインしてください。
       </h5>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
       <div class="field mt-5 mb-3">
           <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"form-control" , placeholder:"メールアドレス" %>
       </div>

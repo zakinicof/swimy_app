@@ -10,6 +10,7 @@
       <h5 class="h5 mb-4 font-weight-normal">
           下記の情報を入力して新規登録してください。
       </h5>
+      <%= render 'shared/error_messages', model: f.object, resource: resource %>
       <div class="field mt-5 mb-3">
         <label class="form-text text-left">メールアドレス</label>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"form-control" , placeholder:"携帯・PCどちらでも可" %>
