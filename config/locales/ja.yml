@@ -2,5 +2,7 @@ ja:
  activerecord:
    attributes:
      user:
-       membership_number: 会員番号
-       name: お名前
+       last_name: お名前
+       first_name: お名前
+       last_name_kana: お名前(カナ)
+       first_name_kana: お名前(カナ)

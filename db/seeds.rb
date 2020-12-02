@@ -5,10 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Lesson.create!(name: "lesson01")
-Lesson.create!(name: "lesson02")
-Lesson.create!(name: "lesson03")
 
-EvaluationItem.create!(name: "評価１", item_number: "１", lesson_id: 1)
-EvaluationItem.create!(name: "評価２", item_number: "２", lesson_id: 1)
-EvaluationItem.create!(name: "評価３", item_number: "３", lesson_id: 2)
+60.times do
+  gimei = Gimei.new
+  User.create(
+    last_name: gimei.last.kanji,
+    first_name: gimei.first.kanji,
+    last_name_kana: gimei.last.katakana,
+    first_name_kana: gimei.first.katakana,
+    email: Faker::Internet.free_email,
+    password: Faker::Internet.password(min_length: 6, mix_case: true)
+  )
+end
