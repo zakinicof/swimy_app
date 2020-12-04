@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
       clear_count = LessonUser.where(user_id: @user.id, lesson_id: lesson.id).count
       clear = clear_count.to_f / item_count * 100
       yet = 100 - clear
-      progress = {'達成' => clear.round, '未達成' => yet.round}
+      progress = {'達成' => clear.ceil(1), '未達成' => yet.ceil(1)}
       @progresses << progress
     end
   end
