@@ -20,12 +20,12 @@
 
 
 
-# Lesson.create(name: "潜る")
-# Lesson.create(name: "浮く")
-# Lesson.create(name: "クロール")
-# Lesson.create(name: "平泳ぎ")
-# Lesson.create(name: "背泳ぎ")
-# Lesson.create(name: "バタフライ")
+Lesson.create(name: "潜る")
+Lesson.create(name: "浮く")
+Lesson.create(name: "クロール")
+Lesson.create(name: "平泳ぎ")
+Lesson.create(name: "背泳ぎ")
+Lesson.create(name: "バタフライ")
 
 # EvaluationItem.create(
 #   lesson_id: 1, 
