@@ -19,7 +19,6 @@
 # end
 
 
-
 # Lesson.create(name: "潜る")
 # Lesson.create(name: "浮く")
 # Lesson.create(name: "クロール")
