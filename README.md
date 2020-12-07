@@ -27,22 +27,27 @@
 
 ## DEMO
 
-# トップ(レッスン一覧)画面
+## トップ(レッスン一覧)画面
 <img width="1440" alt="スクリーンショット 2020-12-07 15 35 03" src="https://user-images.githubusercontent.com/72780750/101317658-421d3580-38a2-11eb-82f3-808293b8acfc.png">
 
-# レッスン詳細画面
+## レッスン詳細画面
 
-# ユーザー一覧画面
+## ユーザー一覧画面
 <img width="1440" alt="スクリーンショット 2020-12-07 15 45 17" src="https://user-images.githubusercontent.com/72780750/101318189-41d16a00-38a3-11eb-9274-e3fbc9b47bc6.png">
 
-# レッスン編集画面
+## レッスン編集画面
 <img width="1440" alt="スクリーンショット 2020-12-07 15 46 57" src="https://user-images.githubusercontent.com/72780750/101318327-7d6c3400-38a3-11eb-863c-cdb6f0448fe6.png">
 
-# ログイン画面
+## ログイン画面
 <img width="1440" alt="スクリーンショット 2020-12-07 15 41 24" src="https://user-images.githubusercontent.com/72780750/101317960-dd160f80-38a2-11eb-996c-affed1ca0510.png">
 
-# 新規登録画面
+## 新規登録画面
 <img width="1440" alt="スクリーンショット 2020-12-07 15 42 13" src="https://user-images.githubusercontent.com/72780750/101318050-0767cd00-38a3-11eb-8102-cb865779d008.png">
+
+## 工夫したポイント
+
+- レッスン
+- レッスン一覧画面で6項目(潜る・浮く・クロール・平泳ぎ・背泳ぎ・バタフライ)の円グラフを全て表示することにより、各泳法の得意・不得意の把握を容易にしました。
 
 
 
