@@ -1,15 +1,15 @@
 <%= render "shared/header" %>
-<div class="container">
+<div class="container-fluid bg-light">
     <div class="row">
       <% @progresses.zip(@lessons).each do |progress,lesson| %>
         <div class="col-md-4 text-center">
-          <h5 class="col">
+          <h5 class="col mt-5">
             <%= lesson.name %>
             <%= "達成率：#{progress["達成"]}%　
             " %>
             <%= link_to "詳細", "/users/#{current_user.id}/lessons/#{lesson.id}" %>
           </h5>
-          <div class="col my-3">
+          <div class="col mb-5">
             <%= pie_chart progress, donut: true, suffix: "%" %>
           </div>
         </div>

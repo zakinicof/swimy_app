@@ -1,24 +1,47 @@
-<%# <link href="/assets/signin.css" rel="stylesheet"> %>
-<body  class="text-center" >
-  <div class="form-signin">
-    <h1 class="mb-4 font-weight-bold text-primary">
+<div class="container-fluid bg-light">
+  <div class="row">
+    <h1 class="col my-5 font-weight-bold text-primary text-center">
       Swimy
     </h1>
-    <h5 class="h5 mb-3 ">
+  </div>
+  <div class="row">
+    <h5 class="col h5 mt-4 text-center">
       ご利用ありがとうございます
     </h5>
-    <h5 class="h5 mb-3 ">
+  </div>
+  <div class="row">
+    <h5 class="col h5 mb-4 text-center">
       メールアドレスとパスワードを入力してログインしてください
     </h5>
+  </div>
+  
     <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-      <div class='text-danger'>
+    <div class="row">
+      <div class='col text-danger text-center'>
         <%= flash[:notice] %>
         <%= flash[:alert] %>
       </div>
-      <%= f.email_field :email, id:"email", placeholder:"Email address", autofocus: true, class:"form-control mb-3" %>
-      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"Password", class:"form-control" %>
-      <%= f.submit "ログイン", class: "btn btn-lg btn-primary btn-block mb-3" %>
+    </div>
+    <div class="row">
+      <div class="mx-auto w-25 mt-5 mb-2">
+        <%= f.email_field :email, id:"email", placeholder:"Email address", autofocus: true, class:"form-control mb-3" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-auto w-25 my-3">
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"Password", class:"form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-auto w-25">
+      <%= f.submit "ログイン", class: "btn btn-lg btn-primary btn-block my-3" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center mt-2 mb-5">
       <%= link_to "新規登録はこちら", new_user_registration_path %>
+      </div>
+    </div>
     <% end %>
-  </div>
-</body>
+</div>
+<%= render "shared/footer" %>

@@ -84,6 +84,15 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
     @lesson = Lesson.find(params[:id])
     @evaluation_item = EvaluationItem.find(params[:id])
+      item_count = EvaluationItem.where(lesson_id: @lesson.id).count
+      clear_count = LessonUser.where(user_id: @user.id, lesson_id: @lesson.id).count
+      if clear_count == 0
+        clear = 0
+      else
+        clear = clear_count.to_f / item_count * 100
+      end
+      yet = 100 - clear
+      @progress = {'達成' => clear.round(0), '未達成' => yet.round(0)}
     # @lesson_user = LessonUser.where(user_id: @user.id, lesson_id: @lesson.id, evaluation_item_id: @evaluation_item.id)
     # binding.pry
   end
