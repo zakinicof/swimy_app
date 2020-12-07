@@ -1,24 +1,7 @@
-# README
+# アプリ名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Swimy
 
-Things you may want to cover:
+##アプリの概要
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+######子どもをスイミングスクール通わせている保護者さんが子どものレッスンの進捗を確認できるアプリ
