@@ -28,6 +28,8 @@
 ## DEMO
 
 # トップ画面
+<img width="1440" alt="スクリーンショット 2020-12-07 15 35 03" src="https://user-images.githubusercontent.com/72780750/101317658-421d3580-38a2-11eb-82f3-808293b8acfc.png">
+
 
 
 
