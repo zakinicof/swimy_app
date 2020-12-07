@@ -31,6 +31,7 @@
 <img width="1440" alt="スクリーンショット 2020-12-07 15 35 03" src="https://user-images.githubusercontent.com/72780750/101317658-421d3580-38a2-11eb-82f3-808293b8acfc.png">
 
 ## レッスン詳細画面
+<img width="1440" alt="スクリーンショット 2020-12-07 18 34 49" src="https://user-images.githubusercontent.com/72780750/101334327-10649880-38bb-11eb-919d-ab7a5fd9495b.png">
 
 ## ユーザー一覧画面
 <img width="1440" alt="スクリーンショット 2020-12-07 15 45 17" src="https://user-images.githubusercontent.com/72780750/101318189-41d16a00-38a3-11eb-9274-e3fbc9b47bc6.png">
