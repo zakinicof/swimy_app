@@ -22,14 +22,21 @@
         <% EvaluationItem.where(lesson_id: @lesson.id).each do |evaluation_item| %>
           <% lesson_user = LessonUser.find_by(user_id: @user.id, lesson_id: @lesson.id, evaluation_item_id: evaluation_item.id) %>
           <% if lesson_user && lesson_user.lesson_check %>
+            <div>
+            <label>
             <%= evaluation_item.name %> <%= check_box_tag "lesson_check[#{evaluation_item.id}][]", lesson_user.lesson_check, lesson_user.lesson_check, {} %><br />
+            </label>
+            </div>
           <% else %>
-            <%= evaluation_item.name %> <%= check_box_tag "lesson_check[#{evaluation_item.id}][]" %><br />
+            <div>
+            <label><%= evaluation_item.name %> <%= check_box_tag "lesson_check[#{evaluation_item.id}][]" %><br />
+            </label>
+            </div>
           <% end %>
         <% end %>
         <input type="hidden" value=<%= @user.id %>>
         <input type="hidden" value=<%= @lesson.id %>>
-        <%= submit_tag '更新' , class:"btn btn-primary btn-block my-4" %>
+        <%= submit_tag '更新' , class:"btn btn-primary btn-block my-4 w-50" %>
       <% end %>
     </div>
     <div class="col-md-6 d-flex align-items-center">
