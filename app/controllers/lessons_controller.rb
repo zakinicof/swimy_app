@@ -86,7 +86,6 @@ class LessonsController < ApplicationController
     if params[:lesson_check]
       params[:lesson_check].each do |item_id|
         if lesson_user = LessonUser.find_by(user_id: params[:user_id], lesson_id: params[:lesson_id], evaluation_item_id: item_id[0])
-          # 更新
           lesson_user.lesson_check = item_id[1][0]
           lesson_user.save!
         else

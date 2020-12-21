@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_075044) do
+ActiveRecord::Schema.define(version: 2020_12_09_040207) do
 
   create_table "evaluation_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_075044) do
     t.boolean "lesson_check", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "second_check", default: false
     t.index ["evaluation_item_id"], name: "index_lesson_users_on_evaluation_item_id"
     t.index ["lesson_id"], name: "index_lesson_users_on_lesson_id"
     t.index ["user_id"], name: "index_lesson_users_on_user_id"
