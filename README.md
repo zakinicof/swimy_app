@@ -55,6 +55,7 @@
 ## 使用技術（開発環境）
 
 - 言語：HTML,CSS,Ruby
+- フレームワーク：Ruby on Rails
 - DB：mysql
 - サーバー：Heroku
 
