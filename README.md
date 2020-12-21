@@ -23,7 +23,7 @@
 - GitHub:https://github.com/zakinicof/swimy_app
 - デプロイ先:https://swimy-app-21165.herokuapp.com/
 - Basic認証:ユーザー名:admin / パスワード:2222
-- テストアカウント:Email:test123@gmail.com / Password:test123
+- テストアカウント:Email:admin@gmail.com / Password:admin1
 
 ## DEMO
 
