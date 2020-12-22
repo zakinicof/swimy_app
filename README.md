@@ -1,7 +1,7 @@
 
 # アプリ名
 
-## Swimy
+# Swimy
 
 ## アプリの概要
 
@@ -22,9 +22,9 @@
 ## 本番環境
 
 - GitHub:https://github.com/zakinicof/swimy_app
-- デプロイ先:https://swimy-app-21165.herokuapp.com/
+- デプロイ先:http://18.181.61.150/
 - Basic認証:ユーザー名:admin / パスワード:2222
-- テストアカウント:Email:admin@gmail.com / Password:admin1
+- テストアカウント:Email:test123@gmail.com / Password:test123
 
 ## DEMO
 
@@ -57,7 +57,7 @@
 - 言語：HTML,CSS,Ruby
 - フレームワーク：Ruby on Rails
 - DB：mysql
-- サーバー：Heroku
+- サーバー：AWS
 
 ## 課題や今後実装したい機能
 
