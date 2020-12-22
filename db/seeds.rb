@@ -6,25 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 100.times do
-#   gimei = Gimei.new
-#   User.create(
-#     last_name: gimei.last.kanji,
-#     first_name: gimei.first.kanji,
-#     last_name_kana: gimei.last.katakana,
-#     first_name_kana: gimei.first.katakana,
-#     email: Faker::Internet.free_email,
-#     password: Faker::Internet.password(min_length: 6, mix_case: true)
-#   )
-# end
+100.times do
+  gimei = Gimei.new
+  User.create(
+    last_name: gimei.last.kanji,
+    first_name: gimei.first.kanji,
+    last_name_kana: gimei.last.katakana,
+    first_name_kana: gimei.first.katakana,
+    email: Faker::Internet.free_email,
+    password: Faker::Internet.password(min_length: 6, mix_case: true)
+  )
+end
 
 
-# Lesson.create(name: "潜る")
-# Lesson.create(name: "浮く")
-# Lesson.create(name: "クロール")
-# Lesson.create(name: "平泳ぎ")
-# Lesson.create(name: "背泳ぎ")
-# Lesson.create(name: "バタフライ")
+Lesson.create(name: "潜る")
+Lesson.create(name: "浮く")
+Lesson.create(name: "クロール")
+Lesson.create(name: "平泳ぎ")
+Lesson.create(name: "背泳ぎ")
+Lesson.create(name: "バタフライ")
 
 EvaluationItem.create(
   lesson_id: 1, 
