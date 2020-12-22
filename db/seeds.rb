@@ -19,168 +19,168 @@
 end
 
 
-# Lesson.create(name: "潜る")
-# Lesson.create(name: "浮く")
-# Lesson.create(name: "クロール")
-# Lesson.create(name: "平泳ぎ")
-# Lesson.create(name: "背泳ぎ")
-# Lesson.create(name: "バタフライ")
+Lesson.create(name: "潜る")
+Lesson.create(name: "浮く")
+Lesson.create(name: "クロール")
+Lesson.create(name: "平泳ぎ")
+Lesson.create(name: "背泳ぎ")
+Lesson.create(name: "バタフライ")
 
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-1", 
-#   name: "1人でプールに入る"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-2", 
-#   name: "1人でプールから上がる"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-3", 
-#   name: "1人で歩く"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-4", 
-#   name: "1人でジャンプする"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-5", 
-#   name: "顔を洗う"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-6", 
-#   name: "顔をつける"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-7", 
-#   name: "耳をつける"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-8", 
-#   name: "バブリング①"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-9", 
-#   name: "立ち飛び込み(浅場)"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-10", 
-#   name: "バブリング②"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-11", 
-#   name: "立ち飛び込み(深場)①"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-12", 
-#   name: "ボビング"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-13", 
-#   name: "立ち飛び込み(深場)②"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-14", 
-#   name: "色の識別"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-15", 
-#   name: "物の識別"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-16", 
-#   name: "ジャンプボビング"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-17", 
-#   name: "おしりつけ"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-18", 
-#   name: "立ち飛び込み(深場)＋ジャンプボビング"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-19", 
-#   name: "お腹つけ"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-20", 
-#   name: "背中つけ"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-21", 
-#   name: "逆立ち①"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-22", 
-#   name: "前まわり①"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-23", 
-#   name: "逆立ち②"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-24", 
-#   name: "前まわり②"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-25", 
-#   name: "石拾い"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-26", 
-#   name: "垂直潜行(3回)"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-27", 
-#   name: "垂直潜行から水中潜泳(12.5m)"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-28", 
-#   name: "水中潜泳(途中息継ぎ1回)①"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-29", 
-#   name: "水中潜泳①"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-30", 
-#   name: "水中潜泳(途中息継ぎ1回)②"
-# )
-# EvaluationItem.create(
-#   lesson_id: 1, 
-#   item_number: "D-31", 
-#   name: "水中潜泳②"
-# )
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-1", 
+  name: "1人でプールに入る"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-2", 
+  name: "1人でプールから上がる"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-3", 
+  name: "1人で歩く"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-4", 
+  name: "1人でジャンプする"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-5", 
+  name: "顔を洗う"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-6", 
+  name: "顔をつける"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-7", 
+  name: "耳をつける"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-8", 
+  name: "バブリング①"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-9", 
+  name: "立ち飛び込み(浅場)"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-10", 
+  name: "バブリング②"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-11", 
+  name: "立ち飛び込み(深場)①"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-12", 
+  name: "ボビング"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-13", 
+  name: "立ち飛び込み(深場)②"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-14", 
+  name: "色の識別"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-15", 
+  name: "物の識別"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-16", 
+  name: "ジャンプボビング"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-17", 
+  name: "おしりつけ"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-18", 
+  name: "立ち飛び込み(深場)＋ジャンプボビング"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-19", 
+  name: "お腹つけ"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-20", 
+  name: "背中つけ"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-21", 
+  name: "逆立ち①"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-22", 
+  name: "前まわり①"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-23", 
+  name: "逆立ち②"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-24", 
+  name: "前まわり②"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-25", 
+  name: "石拾い"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-26", 
+  name: "垂直潜行(3回)"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-27", 
+  name: "垂直潜行から水中潜泳(12.5m)"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-28", 
+  name: "水中潜泳(途中息継ぎ1回)①"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-29", 
+  name: "水中潜泳①"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-30", 
+  name: "水中潜泳(途中息継ぎ1回)②"
+)
+EvaluationItem.create(
+  lesson_id: 1, 
+  item_number: "D-31", 
+  name: "水中潜泳②"
+)
 EvaluationItem.create(
   lesson_id: 2, 
   item_number: "F-1", 
